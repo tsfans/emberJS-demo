@@ -53,6 +53,11 @@ module('Acceptance | list rentals', function(hooks) {
   });
 
   test('should show details for a selected rental', async function (assert) {
+    await visit('/rentals');
+    await click('.urban-living');
+    assert.equal(currentURL(), '/rentals/urban-living', 'show navigate to show route');
+    assert.ok(this.element.querySelector('.show-listing h2').textContent.includes('Urban Living'), 'show list rental title');
+    assert.ok(this.element.querySelector('.show-listing .description'), 'should show a description of a property');
   });
 
 });

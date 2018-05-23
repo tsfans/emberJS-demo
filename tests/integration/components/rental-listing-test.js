@@ -28,7 +28,7 @@ module('Integration | Component | rental-listing', function(hooks) {
 
   test('should display rental details', async function(assert) {
     await render(hbs`{{rental-listing rental=rental}}`);
-    assert.equal(this.$('.listing h3').text(), 'test-title', 'Title:test-title');
+    assert.equal(this.$('.listing h3').text(), 'test-title', 'Title: test-title');
     assert.equal(this.$('.listing .owner').text().trim(), 'Owner: test-owner', 'Owner: test-owner');
   });
 
